@@ -1,0 +1,90 @@
+.text{
+    color: black;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Lobster', cursive;
+    /*adds border around the text*/
+    text-shadow:
+    -1px -1px 0 #FFF,  
+    1px -1px 0 #FFF,
+    -1px 1px 0 #FFF,
+     1px 1px 0 #FFF;
+}
+
+.tableText{
+    color: white;    
+    font-weight: 600;
+}
+
+.currentInfo{
+    color: white;
+    text-align: center;
+    text-shadow:
+  }
+
+.title{
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    font-style: oblique;
+    font-weight: 580;
+    font-family: 'Lobster', cursive;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+    
+}
+
+body {
+    background-image: url('http://onehdwallpaper.com/wp-content/uploads/2015/06/Rainy-Night-Desktop-Wallpapers.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.opaqueBack{
+    background-color:black;
+    opacity: 0.7;
+    filter: alpha(opacity=40);   
+}
+
+/*changes color of row on hover*/
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: purple;
+}
+
+.inputs{
+    width:25%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 600;
+    background-color: black;
+    border-radius: 15px;    
+    height: 40px;
+    opacity: 0.7;
+    filter: alpha(opacity=40);
+}
+
+.myButtons:hover{
+background-color: purple;
+    
+}
+
+
+.myButtons{
+    display:block;
+    margin: auto;
+	width: 15%;    
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    border-radius: 15px;    
+    height: 40px;
+    opacity: 0.7;
+    filter: alpha(opacity=40);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

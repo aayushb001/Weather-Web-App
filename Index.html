@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app = "appjs" >
+    
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="animate.css">
+                    
+        <h1 class = "animated bounceInDown title">Weather Data</h1>
+        
+    </head>
+    
+    <body ng-controller = "myCtrl as myController" class = "container">    
+        
+        <h2 class = "text">{{myPlace}}</h2>
+                          
+        <input type="text" placeholder = "Enter Location" ng-model = "Location" class = "form-control inputs"></input> <!--lets user enter the location-->
+                     
+        <input type="text" placeholder = "Enter EPOCH date" ng-model = "UserDate" class = "form-control inputs"></input> <!--Allows user to enter an epoch date-->
+
+        <a href="#anchor">        
+            
+            <button ng-click = "myController.setCurrentDate()" class = "myButtons" >Current Date</button> <!-- Button which displays current weather data-->
+        
+            <button ng-click = "myController.setCustomDate()" class = "myButtons">Custom Date</button> <!--Custom date data button-->
+            
+        </a>
+              
+        <div class = "jumbotron opaqueBack" id="anchor">
+            
+        <h3 class = "currentInfo">Summary: {{myDataBank.currently.summary}}</h3> <!--Displays Weather Summary-->
+            
+        <h3 class = "currentInfo">Average Temperature: {{returnTemperature}}</h3> <!--Displays avg temp-->
+            
+        </div>
+
+        <div class = "jumbotron opaqueBack">
+            
+            <h3 class = "currentInfo">Hourly Weather</h3>
+            
+            <table border = "1" cellpadding = "15" class = "table table-hover tableText">
+                
+                <tr>
+                    
+                    <td class = "tableText">Time</td>
+                    <td class = "tableText">Temperature (F)</td>
+                    <td class = "tableText">Temperature (C)</td>
+                    
+                </tr>
+                
+                <tr ng-repeat= "hourly in myDataBank.hourly.data" class = "animated slideInRight">
+                    
+                    <td>{{hourly.time * 1000| date:'medium'}}</td> <!--Hourly Time--> <!-- multiplied by 1000 to convert from milisec to sec and the filter converts epoch time to normal-->
+                    <td>{{hourly.temperature}}</td> <!--Fahrenheit temp-->
+                    <td>{{(hourly.temperature - 32) * (5/9) | limitTo: 5}}</td> <!--Celcius temp-->
+               
+                </tr>
+                
+            </table>
+        
+        </div>
+
+        <h3 class= "text">Aayush B</h3>
+
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        
+    <script type="text/javascript" src="app.js"> </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        
+    <script type="text/javascript" src="smoothScroll.js"> </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+</html>
