@@ -3,8 +3,6 @@ var app = angular.module('appjs',  []);
 
 app.controller('myCtrl', function($scope, $http){
 
-    var WeatherDate = "";
-
     this.setCurrentDate = function(){
 
         $http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + $scope.Location).success(function(result) {
