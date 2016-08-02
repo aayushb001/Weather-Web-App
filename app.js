@@ -10,7 +10,7 @@ app.controller('myCtrl', function($scope, $http){
             $scope.myLng = result.results[0].geometry.location.lng;
             $scope.myPlace = result.results[0].formatted_address;
             //inserting the coordinates in forecast.io request and getting the date for a particular location.
-            $http.jsonp('https://api.forecast.io/forecast/1c9cced9de2b84813953ca020cc348d0/'+$scope.myLat+','+$scope.myLng+'?callback=JSON_CALLBACK').success(function(data) {
+            $http.jsonp('https://api.forecast.io/forecast/api_key_xyz123/'+$scope.myLat+','+$scope.myLng+'?callback=JSON_CALLBACK').success(function(data) {
                 $scope.myDataBank = data;
                 $scope.celciusTemp = ($scope.myDataBank.currently.temperature - 32) * (5/9); //converts to celcius
                 $scope.returnTemperature = $scope.myDataBank.currently.temperature + " F or " + $scope.celciusTemp.toPrecision(3) + " C";
