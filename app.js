@@ -28,7 +28,7 @@ app.controller('myCtrl', function($scope, $http){
             $scope.myLng = result.results[0].geometry.location.lng;
 
             //inserting the coordinates in forecast.io request and getting the date for a particular location.
-            $http.jsonp('https://api.forecast.io/forecast/1c9cced9de2b84813953ca020cc348d0/'+$scope.myLat+','+$scope.myLng +','+ $scope.UserDate +'?callback=JSON_CALLBACK').success(function(data) {
+            $http.jsonp('https://api.forecast.io/forecast/api_key_xyz123/'+$scope.myLat+','+$scope.myLng +','+ $scope.UserDate +'?callback=JSON_CALLBACK').success(function(data) {
                 $scope.myDataBank = data;
             });
 
